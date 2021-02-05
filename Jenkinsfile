@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('deploy') {
       steps {
-        sh 'cat ./ngnix-deploy.yml'
+        sh 'cat ./nginx-deploy.yml'
       }
     }
   }
