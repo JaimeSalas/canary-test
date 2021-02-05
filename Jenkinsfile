@@ -1,9 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('deploy') {
+    stage('K8S deploy') {
       steps {
         sh 'cat ./nginx-deploy.yml'
+        kubernetesDeploy(
+          configs: './nginx-deploy.yml',
+          kubeconfigId: 'K8S',
+          enableConfigSubstitution: true
+        )
       }
     }
   }
