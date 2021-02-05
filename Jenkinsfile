@@ -1,6 +1,6 @@
 node {
   stage('check Kubernetes connection') {
-    withKubeConfig([credentialsId: 'K8S', serverUrl: 'https://B170BDBA1EE79E6B939582563774E6C1.sk1.eu-west-3.eks.amazonaws.com']) {
+    withKubeConfig([credentialsId: 'K8S-FILE', serverUrl: 'https://B170BDBA1EE79E6B939582563774E6C1.sk1.eu-west-3.eks.amazonaws.com']) {
       sh 'kubectl get ns'
     }
   }
