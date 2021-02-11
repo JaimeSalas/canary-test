@@ -1,0 +1,15 @@
+pipeline {
+  agent any
+  stages {
+    stage('Deploy express app') {
+      steps{
+        withKubeConfig([credentialsId: 'K8S-FILE', serverUrl: 'https://85088642BED4CD54BFDE331F2AD3E4DD.yl4.eu-west-3.eks.amazonaws.com']) {
+          sh 'kubectl get ns'
+          sh 'kubectl apply -f express-app/express-app-deployment.yml'
+        }      
+      }
+    }
+  }
+}
+
+// canary-test/express-app/express-app-deployment.yml

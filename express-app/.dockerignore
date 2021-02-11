@@ -1,0 +1,4 @@
+node_modules
+Jenkinsfile
+express-app-deployment.yml
+Dockerfile
