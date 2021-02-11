@@ -1,6 +1,9 @@
 pipeline {
   agent any
   stages {
+    stage('Preview manifest') {
+      sh 'cat express-app/express-app-deployment.yml'
+    }
     stage('Deploy express app') {
       steps{
         withKubeConfig([credentialsId: 'K8S-FILE', serverUrl: 'https://85088642BED4CD54BFDE331F2AD3E4DD.yl4.eu-west-3.eks.amazonaws.com']) {
