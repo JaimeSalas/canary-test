@@ -7,7 +7,6 @@ metadata:
   labels:
     app: nodejs
 spec:
-  type: ClusterIP
   selector:
     app: nodejs
   ports:
